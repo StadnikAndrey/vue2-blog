@@ -1,12 +1,12 @@
-# Блог на Vue.js
+# Blog on Vue.js
 
-## Функциональность
-Просмотр всех статей с постраничной навигацией при прокрутке.  
-Просмотр выбранной статьи.  
-Фильтр по рубрике или автору.  
-Публикация статей доступна после регистрации.  
-Личный кабинет пользователя с возможностью добавлять, редактировать, удалять статьи.  
-Админпанель для управления содержимым блога.
+## Functionality
+View all articles with page navigation when scrolling.
+View selected article.
+Filter by category or author.
+Publishing articles is available after registration.
+User personal account with the ability to add, edit, delete articles.
+Admin panel for managing blog content.
 
 ## Peculiarities
 Authorization using JWT tokens.
@@ -22,33 +22,31 @@ The server API is implemented in PHP.
 - PHP, MySQL
 - JWT
 
-## Запуск в режиме разработки
-Все папки кроме dist, prerendered, server размещаем в папке вашего проекта на ПК.  
-Содержимое папки server размещаем в корне папки на сервере.  
-
-Во vue.config.js и build.prerender.js указываем настройки для proxy: target: "ваш домен (там где находится содержимое папки server".  
-В components/page/Article.vue и components/page/cabinet/UpdateAticle.vue пути к img - "для разработки".
+## Run in development mode
+Place all folders except dist, prerendered, server in your project folder on your PC.
+Place the contents of the server folder in the root of the folder on the server.
+In vue.config.js and build.prerender.js, specify the settings for proxy: target: "your domain (where the contents of the server folder are located).
+In components/page/Article.vue and components/page/cabinet/UpdateAticle.vue, the paths to img are "for development".
 ```  
-Устанавливаем все зависимости: npm install.
+Install all dependencies: npm install.
 ```  
-
-На сервере:
-- создаем базу данных, импортируем blog.sql.
-- в api/config/settings.php указываем данные для подключения к базе данных.
+On the server:
+- create a database, import blog.sql.
+- in api/config/settings.php specify the data for connecting to the database.
 
 ````
-npm run serve - запускаем в режиме разработки.
+npm run serve
 ````
 
-## Запуск на сервере 
-Содержимое папки server размещаем в корне папки на сервере.  
-Во vue.config.js и build.prerender.js указываем настройки для proxy: target: "ваш домен (там где находится содержимое папки server".  
-В components/page/Article.vue и components/page/cabinet/UpdateAticle.vue пути к img - "для prodaction".  
-Содержимое dist и папку prerendered размещаем в корне папки на сервере.  
-dist и prerendered берем из репозитория или запускаем npm run render, предварительно удалив prerendered.
+## Launch on server
+Place the contents of the server folder in the root of the server folder.
+In vue.config.js and build.prerender.js, specify the settings for proxy: target: "your domain (where the contents of the server folder are located).
+In components/page/Article.vue and components/page/cabinet/UpdateAticle.vue, the paths to img are "for prodaction".
+Place the contents of the dist and prerendered folder in the root of the server folder.
+take dist and prerendered from the repository or run npm run render, having previously deleted prerendered.
 
-## Обновление контента и пререндеринг
-После обновления контента необходимо выполнить npm run render, предварительно удалив prerendered и обновить папку prerendered на сервере.
+## Content update and pre-rendering
+After updating the content, you need to run npm run render, having previously deleted prerendered and updated the prerendered folder on the server.
 
 ## Project setup
 ```
